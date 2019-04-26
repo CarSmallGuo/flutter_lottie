@@ -33,6 +33,8 @@ public class LottieView implements PlatformView, MethodChannel.MethodCallHandler
         mArgs = args;
         mRegistrar = registrar;
         animationView = new LottieAnimationView(context);
+        animationView.enableMergePathsForKitKatAndAbove(true);
+        animationView.setBackgroundColor(Color.parseColor("#FFFFFF"));
 
         Map<String, Object> params = (Map<String, Object>) args;
         create(params);
